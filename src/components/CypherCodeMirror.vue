@@ -9,7 +9,9 @@
 import { createCypherEditor, parse } from "cypher-codemirror";
 // console.log({ createCypherEditor, parse });
 
-function triggerAutocompletion(cm, changed) {
+function triggerAutocompletion(cm /* codemirror instance */, changed) {
+  console.log(cm);
+
   if (changed.text.length !== 1) {
     return;
   }
@@ -32,39 +34,35 @@ function triggerAutocompletion(cm, changed) {
 
 export default {
   name: "CypherCodeMirror",
-  props: ["theme", "settings", "schema"],
+  props: {
+    props: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
-    const Settings = this.settings;
-    const Schema = this.schema;
-    Settings.theme = this.theme;
-
     return {
-      Settings,
-      Schema,
+      settings: {
+        ...this.props.settings,
+        theme: this.props.theme
+      },
+      schema: this.props.schema,
       input: null,
       editorSupport: null,
       editor: null
     };
   },
   mounted() {
-    // console.log(this.theme);
-    // console.log(this.settings);
-    // console.log(this.schema);
-
     this.input = this.$refs.input;
-
-    console.log(this.Settings);
-    console.log(this.Schema);
-    console.log(this.input);
 
     const { editor, editorSupport } = createCypherEditor(
       this.input,
-      this.Settings
+      this.settings
     );
 
-    console.log({ editor, editorSupport });
-
     this.editor = editor;
+    this.editor.on("change", triggerAutocompletion);
+    this.editorSupport = editorSupport;
   },
   methods: {
     parseContent() {

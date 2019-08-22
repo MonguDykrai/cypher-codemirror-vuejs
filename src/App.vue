@@ -51,7 +51,10 @@ body {
   <div id="app">
     <div class="columns">
       <div>
-        <CypherCodeMirror :theme="theme" :settings="codeMirrorSettings" :schema="neo4jSchema" />
+        <CypherCodeMirror
+          :props="{ theme, settings: codeMirrorSettings, schema: neo4jSchema }"
+        />
+        <!-- <CypherCodeMirror :theme="theme" :settings="codeMirrorSettings" :schema="neo4jSchema" /> -->
       </div>
       <div>
         <div class="schema">

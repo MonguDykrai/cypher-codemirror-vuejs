@@ -26,3 +26,9 @@ import "cypher-codemirror/dist/cypher-codemirror-all.css";
 import CypherCodeMirror from "@/components/CypherCodeMirror.vue";
 import { neo4jSchema, codeMirrorSettings } from "@/assets/common";
 ```
+
+## 成功展示编辑器
+
+仅高亮，没补全
+
+![](images/success.gif)
