@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="parseContent">Manually parse content</button>
+    <!-- <button @click="parseContent">Manually parse content</button> -->
     <div class="Codemirror-Container" ref="input" />
   </div>
 </template>
@@ -65,43 +65,47 @@ export default {
     this.editorSupport = editorSupport;
 
     this.editorSupport.on("updated", () => {
-      console.log(
-        "UPDATED - this.editorSupport.version: ",
-        this.editorSupport.version
-      );
+      console.warn(this.editor.getValue());
 
-      console.table(
-        this.editorSupport.queriesAndCommands.map(stmt => stmt.getText())
-      );
+      // console.log(
+      //   "UPDATED - this.editorSupport.version: ",
+      //   this.editorSupport.version
+      // );
+
+      // console.table(
+      //   this.editorSupport.queriesAndCommands.map(stmt => stmt.getText())
+      // );
     });
 
-    this.editorSupport.on("update", () => {
-      console.log("UPDATE - this.editor.version: ", this.editor.version);
-      console.log(
-        "UPDATE - this.editorSupport.version: ",
-        this.editorSupport.version
-      );
-      this.editorSupport
-        .ensureVersion(this.editor.version)
-        .then(() => {
-          console.log("ENSURE OK - this.editor.version: ", this.editor.version);
-          console.log(
-            "ENSURE OK - this.editorSupport.version: ",
-            this.editorSupport.version
-          );
-        })
-        .catch(() => {
-          console.error("Version not found");
-          console.log(
-            "ENSURE ERROR - this.editor.version: ",
-            this.editor.version
-          );
-          console.log(
-            "ENSURE ERROR - this.editorSupport.version: ",
-            this.editorSupport.version
-          );
-        });
-    });
+    // this.editorSupport.on("update", () => {
+    //   console.log(this.editor.getValue());
+
+    //   console.log("UPDATE - this.editor.version: ", this.editor.version);
+    //   console.log(
+    //     "UPDATE - this.editorSupport.version: ",
+    //     this.editorSupport.version
+    //   );
+    //   this.editorSupport
+    //     .ensureVersion(this.editor.version)
+    //     .then(() => {
+    //       console.log("ENSURE OK - this.editor.version: ", this.editor.version);
+    //       console.log(
+    //         "ENSURE OK - this.editorSupport.version: ",
+    //         this.editorSupport.version
+    //       );
+    //     })
+    //     .catch(() => {
+    //       console.error("Version not found");
+    //       console.log(
+    //         "ENSURE ERROR - this.editor.version: ",
+    //         this.editor.version
+    //       );
+    //       console.log(
+    //         "ENSURE ERROR - this.editorSupport.version: ",
+    //         this.editorSupport.version
+    //       );
+    //     });
+    // });
 
     this.editorSupport.setSchema(this.schema);
   },

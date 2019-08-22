@@ -49,12 +49,11 @@ body {
 
 <template>
   <div id="app">
-    <div class="columns">
+    <CypherCodeMirror :props="{ theme, settings: codeMirrorSettings, schema: neo4jSchema }" />
+
+    <!-- <div class="columns">
       <div>
-        <CypherCodeMirror
-          :props="{ theme, settings: codeMirrorSettings, schema: neo4jSchema }"
-        />
-        <!-- <CypherCodeMirror :theme="theme" :settings="codeMirrorSettings" :schema="neo4jSchema" /> -->
+        <CypherCodeMirror :props="{ theme, settings: codeMirrorSettings, schema: neo4jSchema }" />
       </div>
       <div>
         <div class="schema">
@@ -63,7 +62,7 @@ body {
           <pre>{{ JSON.stringify(neo4jSchema, null, 2) }}</pre>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
