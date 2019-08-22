@@ -51,21 +51,16 @@ body {
   <div id="app">
     <div class="columns">
       <div>
-        <CypherCodeMirror
-          theme="{this.state.theme}"
-          settings="{codeMirrorSettings}"
-          schema="{neo4jSchema}"
-        />
+        <CypherCodeMirror :theme="theme" :settings="codeMirrorSettings" :schema="neo4jSchema" />
       </div>
       <div>
         <div class="schema">
-          <button onClick="{this.lightTheme}">Light theme</button>
-          <button onClick="{this.darkTheme}">Dark theme</button>
-          <pre>{JSON.stringify(neo4jSchema, null, 2)}</pre>
+          <button @click="lightTheme">Light theme</button>
+          <button @click="darkTheme">Dark theme</button>
+          <pre>{{ JSON.stringify(neo4jSchema, null, 2) }}</pre>
         </div>
       </div>
     </div>
-    <CypherCodeMirror :theme="theme" :settings="codeMirrorSettings" :schema="neo4jSchema" />
   </div>
 </template>
 
@@ -90,6 +85,14 @@ export default {
   },
   components: {
     CypherCodeMirror
+  },
+  methods: {
+    lightTheme() {
+      this.theme = "cypher";
+    },
+    darkTheme() {
+      this.theme = "cypher cypher-dark";
+    }
   }
 };
 </script>
