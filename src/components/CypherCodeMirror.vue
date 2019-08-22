@@ -107,7 +107,26 @@ export default {
   },
   methods: {
     parseContent() {
-      console.log(`parseContent`);
+      const { referencesListener, referencesProviders } = parse(
+        this.editor.getValue()
+      );
+      const { queriesAndCommands } = referencesListener;
+      console.log("queriesAndCommands: ", queriesAndCommands);
+      console.log("referencesProviders: ", referencesProviders);
+    }
+  },
+  watch: {
+    "props.schema": {
+      handler(val) {
+        this.schema = val;
+        this.editorSupport.setSchema(val);
+      },
+      deep: true
+    },
+    "props.theme"(val) {
+      this.theme = val;
+      this.settings.theme = val;
+      this.editor.setOption("theme", val);
     }
   }
 };
