@@ -1222,6 +1222,11 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
+antlr4@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.npm.taobao.org/antlr4/download/antlr4-4.7.0.tgz#297f956ddc06f83397fc0990ecf2e0cf20bfbbee"
+  integrity sha1-KX+VbdwG+DOX/AmQ7PLgzyC/u+4=
+
 any-promise@^1.0.0:
   version "1.3.0"
   resolved "https://registry.npm.taobao.org/any-promise/download/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
@@ -1990,6 +1995,11 @@ code-point-at@^1.0.0:
   resolved "https://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
+codemirror@^5.48.4:
+  version "5.48.4"
+  resolved "https://registry.npm.taobao.org/codemirror/download/codemirror-5.48.4.tgz#4210fbe92be79a88f0eea348fab3ae78da85ce47"
+  integrity sha1-QhD76Svnmojw7qNI+rOueNqFzkc=
+
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/collection-visit/download/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -2466,6 +2476,22 @@ cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.npm.taobao.org/cyclist/download/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
+
+cypher-codemirror@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npm.taobao.org/cypher-codemirror/download/cypher-codemirror-1.1.5.tgz#93329f0a68ec93ed6f1e2f3426d6424248432ed1"
+  integrity sha1-kzKfCmjsk+1vHi80JtZCQkhDLtE=
+  dependencies:
+    cypher-editor-support "1.1.5"
+
+cypher-editor-support@1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npm.taobao.org/cypher-editor-support/download/cypher-editor-support-1.1.5.tgz#b0824d88e6ffe3f1e57cff853c9253c62c6f53ff"
+  integrity sha1-sIJNiOb/4/HlfP+FPJJTxixvU/8=
+  dependencies:
+    antlr4 "4.7.0"
+    fuzzaldrin "2.1.0"
+    lodash "4.17.4"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -3315,6 +3341,11 @@ function-bind@^1.0.2, function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/function-bind/download/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0=
+
+fuzzaldrin@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/fuzzaldrin/download/fuzzaldrin-2.1.0.tgz#90204c3e2fdaa6941bb28d16645d418063a90e9b"
+  integrity sha1-kCBMPi/appQbso0WZF1BgGOpDps=
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -4469,6 +4500,11 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
+
+lodash@4.17.4:
+  version "4.17.4"
+  resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+  integrity sha1-eCA6TRwyiuHYbcpkYONptX9AVa4=
 
 lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.15"
@@ -7559,11 +7595,6 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.0.3:
-  version "3.1.2"
-  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.1.2.tgz#2e0904703545dabdd42b2b7a2e617f02f99a1969"
-  integrity sha1-LgkEcDVF2r3UKyt6LmF/AvmaGWk=
-
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -7589,11 +7620,6 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=
-
-vuex@^3.0.1:
-  version "3.1.1"
-  resolved "https://registry.npm.taobao.org/vuex/download/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
-  integrity sha1-DCZL/jDNvM+Wq52zF30hGCilkQ4=
 
 watchpack@^1.6.0:
   version "1.6.0"
